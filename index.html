@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ClickLaw — מכתבים משפטיים בחתימת עורך דין | Legal letters signed by a lawyer</title>
+<meta name="description" content="ClickLaw היא פלטפורמה ישראלית ליצירת מכתבי התראה, מכתבי תשובה ותלונות — טיוטה חינמית או מכתב בחתימת עורך דין מוסמך, בלי לצאת מהבית.">
+<meta property="og:title" content="ClickLaw — Legal letters signed by an Israeli lawyer">
+<meta property="og:description" content="Free drafts or lawyer-signed warning, demand and response letters in Israel — online, in minutes.">
+<meta property="og:image" content="logo.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="logo.png">
+<link rel="canonical" href="https://clicklaw.co.il/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --purple: #6655b0;
+    --navy: #2f2466;
+    --ink: #1c1a2e;
+    --muted: #5c5a6e;
+    --line: #e6e3f2;
+    --soft: #f5f3fc;
+    --bg: #ffffff;
+    --card: #ffffff;
+    --accent: #f0b429;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #eeecf8; --muted: #b5b1cc; --line: #34305a; --soft: #1f1b3d;
+      --bg: #141129; --card: #1b1735; --purple: #9b8cf0; --navy: #c9c0ff;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Heebo", system-ui, -apple-system, "Segoe UI", Arial, sans-serif; line-height: 1.65; }
+  a { color: var(--purple); }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+  header.top { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 64px; }
+  .brand img { height: 40px; width: auto; display: block; background: #fff; border-radius: 8px; padding: 4px 8px; }
+  .lang { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
+  .lang button { border: 0; background: transparent; color: var(--muted); font: inherit; font-weight: 600; padding: 8px 14px; min-height: 40px; cursor: pointer; }
+  .lang button[aria-pressed="true"] { background: var(--purple); color: #fff; }
+  .hero { padding: 64px 0 48px; background: radial-gradient(1200px 400px at 50% -10%, var(--soft), transparent); text-align: center; }
+  .eyebrow { display: inline-block; font-weight: 700; color: var(--purple); background: var(--soft); border-radius: 999px; padding: 4px 14px; font-size: 14px; }
+  h1 { font-size: clamp(30px, 5vw, 48px); line-height: 1.15; margin: 16px 0 12px; color: var(--navy); font-weight: 800; }
+  .lead { font-size: clamp(17px, 2.2vw, 20px); color: var(--muted); max-width: 720px; margin: 0 auto 28px; }
+  .cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border-radius: 12px; font-weight: 700; text-decoration: none; }
+  .btn.primary { background: var(--purple); color: #fff; }
+  .btn.ghost { border: 2px solid var(--purple); color: var(--purple); }
+  .trust { display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: center; margin-top: 28px; color: var(--muted); font-size: 15px; padding: 0; list-style: none; }
+  .trust li::before { content: "✓"; color: var(--purple); font-weight: 800; margin-inline-end: 6px; }
+  section { padding: 56px 0; }
+  section.alt { background: var(--soft); }
+  h2 { font-size: clamp(24px, 3.4vw, 34px); color: var(--navy); margin: 0 0 8px; text-align: center; }
+  .sub { text-align: center; color: var(--muted); margin: 0 auto 32px; max-width: 680px; }
+  .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 20px; }
+  .card h3 { margin: 6px 0 6px; font-size: 19px; color: var(--ink); }
+  .card p { margin: 0; color: var(--muted); }
+  .num { width: 36px; height: 36px; border-radius: 50%; background: var(--purple); color: #fff; display: grid; place-items: center; font-weight: 800; }
+  .plans { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .plan { border: 1px solid var(--line); border-radius: 18px; padding: 24px; background: var(--card); }
+  .plan.featured { border: 2px solid var(--purple); }
+  .price { font-size: 28px; font-weight: 800; color: var(--navy); margin: 4px 0 12px; }
+  .price small { font-size: 14px; color: var(--muted); font-weight: 500; }
+  .plan ul { padding-inline-start: 20px; margin: 0; color: var(--muted); }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; padding: 0; list-style: none; margin: 0; }
+  .tags li { border: 1px solid var(--line); background: var(--card); border-radius: 999px; padding: 8px 14px; font-size: 15px; }
+  .note { font-size: 13px; color: var(--muted); text-align: center; max-width: 720px; margin: 24px auto 0; }
+  footer { border-top: 1px solid var(--line); padding: 28px 0; color: var(--muted); font-size: 14px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; align-items: center; }
+  html[lang="he"] [data-lang="en"], html[lang="en"] [data-lang="he"] { display: none !important; }
+  @media (max-width: 520px) { .btn { width: 100%; } .hero { padding-top: 40px; } }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="https://clicklaw.co.il" aria-label="ClickLaw"><img src="logo.png" alt="ClickLaw" width="120" height="40"></a>
+    <div class="lang" role="group" aria-label="Language / שפה">
+      <button type="button" data-set-lang="he" aria-pressed="true">עברית</button>
+      <button type="button" data-set-lang="en" aria-pressed="false">English</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow" data-lang="he">פלטפורמה משפטית דיגיטלית בישראל</span>
+      <span class="eyebrow" data-lang="en">Israel's digital legal-letter platform</span>
+      <h1 data-lang="he">מכתב משפטי חתום על ידי עורך דין — בלי לצאת מהבית</h1>
+      <h1 data-lang="en">Legal letters signed by a lawyer — without leaving home</h1>
+      <p class="lead" data-lang="he">ClickLaw מאפשרת להפיק מכתבי התראה, מכתבי תשובה, תלונות ובקשות החזר תוך דקות. בוחרים טיוטה חינמית, או מכתב שנבדק, נערך ונחתם על ידי עורך דין ישראלי מוסמך — ומשלמים רק אחרי שרואים תצוגה מקדימה.</p>
+      <p class="lead" data-lang="en">ClickLaw lets you create warning, demand and response letters, complaints and refund requests in minutes. Choose a free draft, or a letter reviewed, edited and signed by a licensed Israeli lawyer — and pay only after you see a preview.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="https://clicklaw.co.il/letters"><span data-lang="he">יצירת מכתב עכשיו</span><span data-lang="en">Create a letter now</span></a>
+        <a class="btn ghost" href="https://clicklaw.co.il"><span data-lang="he">לאתר ClickLaw</span><span data-lang="en">Visit ClickLaw</span></a>
+      </div>
+      <ul class="trust" data-lang="he">
+        <li>עורך דין ישראלי מוסמך</li><li>תצוגה מקדימה לפני תשלום</li><li>משלוח בדוא״ל עם תיעוד מסירה</li><li>טיפול תוך עד 2 ימי עסקים</li>
+      </ul>
+      <ul class="trust" data-lang="en">
+        <li>Licensed Israeli lawyer</li><li>Preview before you pay</li><li>Email delivery with proof</li><li>Within 2 business days</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 data-lang="he">איך זה עובד?</h2><h2 data-lang="en">How it works</h2>
+      <p class="sub" data-lang="he">ארבעה שלבים פשוטים — מהסיפור שלכם ועד מכתב חתום אצל הנמען.</p>
+      <p class="sub" data-lang="en">Four simple steps — from your story to a signed letter in the recipient's inbox.</p>
+      <div class="grid">
+        <div class="card"><div class="num">1</div>
+          <h3 data-lang="he">בוחרים סוג מכתב</h3><h3 data-lang="en">Choose a letter</h3>
+          <p data-lang="he">מכתב התראה, מכתב תשובה, תלונה צרכנית או בקשת החזר — מתוך קטלוג של עשרות סוגי מכתבים.</p>
+          <p data-lang="en">Warning letter, response letter, consumer complaint or refund request — from a catalogue of dozens of letter types.</p></div>
+        <div class="card"><div class="num">2</div>
+          <h3 data-lang="he">משוחחים עם העוזר החכם</h3><h3 data-lang="en">Chat with the smart assistant</h3>
+          <p data-lang="he">עונים על כמה שאלות בשיחה טבעית, בעברית או באנגלית — בלי טפסים מסובכים.</p>
+          <p data-lang="en">Answer a few questions in a natural conversation, in Hebrew or English — no complicated forms.</p></div>
+        <div class="card"><div class="num">3</div>
+          <h3 data-lang="he">צופים בתצוגה מקדימה</h3><h3 data-lang="en">See a preview</h3>
+          <p data-lang="he">רואים את המכתב לפני כל תשלום ומחליטים אם להסתפק בטיוטה או לשדרג לחתימת עורך דין.</p>
+          <p data-lang="en">See your letter before paying anything, then decide: keep the draft or upgrade to a lawyer's signature.</p></div>
+        <div class="card"><div class="num">4</div>
+          <h3 data-lang="he">עו״ד בודק, חותם ושולח</h3><h3 data-lang="en">A lawyer reviews, signs and sends</h3>
+          <p data-lang="he">עורך הדין בודק את העובדות, מדייק את הטענות, חותם — והמכתב נשלח בדוא״ל לנמען עם עותק אליכם ותיעוד מסירה.</p>
+          <p data-lang="en">The lawyer checks the facts, sharpens the claims and signs — the letter is emailed to the recipient, with a copy and delivery proof for you.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <h2 data-lang="he">טיוטה חינמית או ״הפוך למשפטי״</h2><h2 data-lang="en">Free draft or “Make it Legal”</h2>
+      <p class="sub" data-lang="he">בוחרים בדיוק כמה כוח משפטי צריך. מחיר קבוע ושקוף, כולל מע״מ.</p>
+      <p class="sub" data-lang="en">Choose exactly how much legal weight you need. Fixed, transparent prices including VAT.</p>
+      <div class="plans">
+        <div class="plan">
+          <h3 data-lang="he">טיוטה חינמית</h3><h3 data-lang="en">Free draft</h3>
+          <div class="price"><span data-lang="he">0 ₪</span><span data-lang="en">₪0</span></div>
+          <ul data-lang="he"><li>ניסוח אוטומטי על ידי העוזר החכם</li><li>הורדה מיידית כקובץ PDF</li><li>בסוגי מכתבים התומכים בטיוטה חינמית</li></ul>
+          <ul data-lang="en"><li>Drafted automatically by the smart assistant</li><li>Instant PDF download</li><li>For letter types that offer a free draft</li></ul>
+        </div>
+        <div class="plan featured">
+          <h3 data-lang="he">הפוך למשפטי</h3><h3 data-lang="en">Make it Legal</h3>
+          <div class="price"><span data-lang="he">החל מ-450 ₪ <small>כולל מע״מ</small></span><span data-lang="en">From ₪450 <small>incl. VAT</small></span></div>
+          <ul data-lang="he"><li>בדיקה, עריכה וחתימה אישית של עורך דין מוסמך</li><li>משלוח בדוא״ל לנמען, עותק אליכם ותיעוד מסירה</li><li>טיפול תוך עד 2 ימי עסקים</li></ul>
+          <ul data-lang="en"><li>Reviewed, edited and personally signed by a licensed lawyer</li><li>Emailed to the recipient, with a copy and delivery proof for you</li><li>Handled within 2 business days</li></ul>
+        </div>
+        <div class="plan">
+          <h3 data-lang="he">שיחת ייעוץ עם עורך דין</h3><h3 data-lang="en">Consultation with a lawyer</h3>
+          <div class="price"><span data-lang="he">590 ₪ <small>כולל מע״מ</small></span><span data-lang="en">₪590 <small>incl. VAT</small></span></div>
+          <ul data-lang="he"><li>שיחה אישית של עד 30 דקות</li><li>בירור זכויות ודרכי פעולה</li></ul>
+          <ul data-lang="en"><li>A personal call of up to 30 minutes</li><li>Understand your rights and next steps</li></ul>
+        </div>
+      </div>
+      <p class="note" data-lang="he">הטיוטה החינמית מופקת ללא מעורבות עורך דין ואינה מהווה ייעוץ משפטי. המחירים המלאים לכל סוג מכתב מופיעים באתר.</p>
+      <p class="note" data-lang="en">The free draft is produced without a lawyer and is not legal advice. Full prices for each letter type are listed on the website.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 data-lang="he">מכתבים נפוצים</h2><h2 data-lang="en">Popular letters</h2>
+      <p class="sub" data-lang="he">צרכנות, שכירות, עבודה, גביית חובות, נדל״ן ועוד.</p>
+      <p class="sub" data-lang="en">Consumer rights, tenancy, employment, debt collection, real estate and more.</p>
+      <ul class="tags" data-lang="he">
+        <li>גביית חוב מלקוח שלא משלם</li><li>איחור במסירת דירה מקבלן</li><li>ביטול טיסה (חוק טיבי)</li><li>שחרור פיצויים וטופס 161</li><li>נזילה מהשכן</li><li>לשון הרע ושיימינג</li><li>הפרת הסכם שכירות</li><li>מענה למכתב התראה</li>
+      </ul>
+      <ul class="tags" data-lang="en">
+        <li>Collecting an unpaid invoice</li><li>Late apartment delivery by a developer</li><li>Flight cancellation compensation</li><li>Severance release (Form 161)</li><li>Water leak from a neighbour</li><li>Defamation and online shaming</li><li>Lease breach</li><li>Responding to a warning letter</li>
+      </ul>
+      <div class="cta-row" style="margin-top:28px">
+        <a class="btn primary" href="https://clicklaw.co.il/letters"><span data-lang="he">לכל סוגי המכתבים</span><span data-lang="en">See all letter types</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <strong>ClickLaw</strong> ·
+      <a href="https://clicklaw.co.il">clicklaw.co.il</a> ·
+      <a href="mailto:support@clicklaw.co.il">support@clicklaw.co.il</a>
+    </div>
+    <div>
+      <span data-lang="he">פרויקט נוסף:</span><span data-lang="en">Also by us:</span>
+      <a href="https://mazekal.co.il">MaZeKal — מה זה קל</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    function apply(lang) {
+      root.lang = lang;
+      root.dir = lang === "he" ? "rtl" : "ltr";
+      document.querySelectorAll("[data-set-lang]").forEach(function (b) {
+        b.setAttribute("aria-pressed", String(b.getAttribute("data-set-lang") === lang));
+      });
+      try { localStorage.setItem("lang", lang); } catch (e) {}
+    }
+    var initial = "he";
+    try {
+      var q = new URLSearchParams(location.search).get("lang");
+      initial = q === "en" || q === "he" ? q : (localStorage.getItem("lang") || "he");
+    } catch (e) {}
+    apply(initial === "en" ? "en" : "he");
+    document.querySelectorAll("[data-set-lang]").forEach(function (b) {
+      b.addEventListener("click", function () { apply(b.getAttribute("data-set-lang")); });
+    });
+  })();
+</script>
+</body>
+</html>
